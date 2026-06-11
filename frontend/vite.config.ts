@@ -20,11 +20,13 @@ export default defineConfig({
             src: '/logo_192.png',
             sizes: '192x192',
             type: 'image/png',
+            purpose: 'any maskable' // <-- Adiciona isso aqui!
           },
           {
             src: '/logo_512.png',
             sizes: '512x512',
             type: 'image/png',
+            purpose: 'any maskable' // <-- E aqui também!
           },
         ],
       },
