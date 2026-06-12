@@ -24,7 +24,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-ALLOWED_HOSTS=["*"]
+
 DATABASES = {
     'default': {
         # Lendo as variáveis direto do arquivo .env
@@ -74,7 +74,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'meusite.com',
-    'www.meusite.com'
+    'www.meusite.com',
+    "*"
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
