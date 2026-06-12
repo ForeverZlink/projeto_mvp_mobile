@@ -68,26 +68,31 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 space-y-2 border-t border-gray-200">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  if (item.id === "admin") {
-                    window.open(urlSiteAdmin, "_blank");
-                    setMobileMenuOpen(false);
-                    return;
-                  }
-
-                  onNavigate(item.id);
+        <nav className="md:hidden py-4 border-t border-gray-200">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                if (item.id === "admin") {
+                  window.open(urlSiteAdmin, "_blank");
                   setMobileMenuOpen(false);
-                }}
-                >
-                {item.label}
-              </button>
-            ))}
-          </nav>
-        )}
+                  return;
+                }
+
+                onNavigate(item.id);
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                currentView === item.id
+                  ? "bg-green-50 text-green-600"
+                  : "text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+      )}
       </div>
     </header>
   );
