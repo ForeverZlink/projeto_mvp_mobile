@@ -82,49 +82,54 @@ export function Hero({ onNavigate }: HeroProps) {
             </button>
           </div>
         </div>
-        {/* Novidades */}
-        <div className="mt-24">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12">
-            Novidades do Circuito Verde
-          </h2>
+       {/* Novidades */}
+        {novidades.length > 0 && (
+          <div className="mt-24">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12">
+              Novidades do Circuito Verde
+            </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {novidades.map((n) => (
-              <NewsCard
-                key={n.id}
-                date={n.data_publicacao || "Não publicado"}
-                title={n.titulo}
-                park={n.parque?.nome || "Não informado"}
-                description={n.descricao}
-                tags={n.tag_novidades?.map((t) => t.nome_da_tag) || []}
-              />
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {novidades.map((n) => (
+                <NewsCard
+                  key={n.id}
+                  date={n.data_publicacao || "Não publicado"}
+                  title={n.titulo}
+                  park={n.parque?.nome || "Não informado"}
+                  description={n.descricao}
+                  tags={n.tag_novidades?.map((t) => t.nome_da_tag) || []}
+                />
+              ))}
+            </div>
           </div>
-
-
-        </div>
+        )}
 
         {/* Parques em Destaque */}
-        <div className="mt-24">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12">
-            Parques em Destaque
-          </h2>
+        {parques?.length > 0 && (
+          <div className="mt-24">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12">
+              Parques em Destaque
+            </h2>
 
-         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {parques.map((p) => (
-            <ParkCard
-              key={p.id}
-              title={p.nome}
-              description={p.descricao}
-              address={p.localizacao}
-              hours={p.horarios?.map(h => `${h.dia_extenso}: ${h.hora_abertura} - ${h.hora_fechamento}`).join(" | ") || "Não informado"}
-              tags={p.tag?.map(t => t.nome_da_tag) || []}
-            />
-          ))}
-        </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {parques.map((p) => (
+                <ParkCard
+                  key={p.id}
+                  title={p.nome}
+                  description={p.descricao}
+                  address={p.localizacao}
+                  hours={
+                    p.horarios?.map(
+                      h => `${h.dia_extenso}: ${h.hora_abertura} - ${h.hora_fechamento}`
+                    ).join(" | ") || "Não informado"
+                  }
+                  tags={p.tag?.map(t => t.nome_da_tag) || []}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
-
-        </div>
 
       </div>
     </div>
