@@ -24,7 +24,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-
+ALLOWED_HOSTS=["*"]
 DATABASES = {
     'default': {
         # Lendo as variáveis direto do arquivo .env
