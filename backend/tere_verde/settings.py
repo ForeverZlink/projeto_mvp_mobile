@@ -20,7 +20,7 @@ ROOT_URLCONF = 'tere_verde.urls'
 # WSGI application path
 WSGI_APPLICATION = 'tere_verde.wsgi.application'
 STATIC_URL = '/static/'
-
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
