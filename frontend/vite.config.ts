@@ -23,7 +23,7 @@ export default defineConfig({
             purpose: 'any maskable' // <-- Adiciona isso aqui!
           },
           {
-            src: '/android-chrome-512x512.png',
+            src: '/logo_512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable' // <-- E aqui também!
