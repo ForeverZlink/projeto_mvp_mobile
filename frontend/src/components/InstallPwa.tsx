@@ -70,12 +70,6 @@ export default function InstallPrompt() {
       <div style={modalStyle}>
         <h2>Instalar Aplicativo</h2>
 
-        <button
-          onClick={() => setShowModal(false)}
-          style={closeButtonStyle}
-        >
-          Fechar
-        </button>
         {isIOS ? (
           <>
             <p>
@@ -103,7 +97,12 @@ export default function InstallPrompt() {
           </>
         )}
 
-
+        <button
+          onClick={() => setShowModal(false)}
+          style={closeButtonStyle}
+        >
+          Fechar
+        </button>
       </div>
     </div>
   );
@@ -134,7 +133,9 @@ const buttonStyle: React.CSSProperties = {
   borderRadius: "8px",
   cursor: "pointer",
   fontSize: "16px",
-  background:"blue"
+  background:"green",
+  color: "white"
+
 };
 
 const closeButtonStyle: React.CSSProperties = {
