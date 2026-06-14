@@ -70,6 +70,12 @@ export default function InstallPrompt() {
       <div style={modalStyle}>
         <h2>Instalar Aplicativo</h2>
 
+        <button
+          onClick={() => setShowModal(false)}
+          style={closeButtonStyle}
+        >
+          Fechar
+        </button>
         {isIOS ? (
           <>
             <p>
@@ -97,12 +103,7 @@ export default function InstallPrompt() {
           </>
         )}
 
-        <button
-          onClick={() => setShowModal(false)}
-          style={closeButtonStyle}
-        >
-          Fechar
-        </button>
+
       </div>
     </div>
   );
