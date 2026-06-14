@@ -19,11 +19,7 @@ ROOT_URLCONF = 'tere_verde.urls'
 
 # WSGI application path
 WSGI_APPLICATION = 'tere_verde.wsgi.application'
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+
 
 DATABASES = {
     'default': {
@@ -79,6 +75,7 @@ ALLOWED_HOSTS = [
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,4 +128,11 @@ SPECTACULAR_SETTINGS = {
         'defaultModelsExpandDepth': -1,   # esconde modelos
     },
 }
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+# Adicione isso para o WhiteNoise comprimir e servir o CSS rapidinho:
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
