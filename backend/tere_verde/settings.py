@@ -12,7 +12,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # DEBUG (leitura segura de variável)
-DEBUG = os.getenv('DEBUG')
+DEBUG =os.getenv('DEBUG', 'False').lower() == 'true'
 
 # Módulo de URL do projeto
 ROOT_URLCONF = 'tere_verde.urls'
