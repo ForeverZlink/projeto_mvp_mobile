@@ -17,7 +17,7 @@ export function Hero({ onNavigate }: HeroProps) {
           CircuitoVerdeService.buscarNovidades(),
           CircuitoVerdeService.buscarParques()
         ]);
-
+        console.log(parquesData)
         setNovidades(novidadesData);
         setParques(parquesData);
 
