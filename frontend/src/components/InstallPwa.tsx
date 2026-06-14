@@ -133,6 +133,7 @@ const buttonStyle: React.CSSProperties = {
   borderRadius: "8px",
   cursor: "pointer",
   fontSize: "16px",
+  background:"blue"
 };
 
 const closeButtonStyle: React.CSSProperties = {
