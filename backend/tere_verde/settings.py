@@ -9,10 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / '.env')
 
 # SECRET_KEY: em produção, defina a variável DJANGO_SECRET_KEY no .env ou no ambiente
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'replace-this-with-a-secure-key')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # DEBUG (leitura segura de variável)
-DEBUG = os.getenv('DEBUG', True)
+DEBUG = os.getenv('DEBUG')
 
 # Módulo de URL do projeto
 ROOT_URLCONF = 'tere_verde.urls'
@@ -69,9 +69,8 @@ STATIC_URL = '/static/'
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'meusite.com',
-    'www.meusite.com',
-    "*"
+    "*",
+    os.getenv('URL_FRONT_END_AUTORIZADO_1')
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
