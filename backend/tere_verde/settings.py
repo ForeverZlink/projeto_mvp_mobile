@@ -72,6 +72,12 @@ ALLOWED_HOSTS = [
     "*",
     os.getenv('URL_FRONT_END_AUTORIZADO_1')
 ]
+CORS_ALLOWED_ORIGINS = [
+    'localhost',
+    '127.0.0.1',
+    "*",
+    os.getenv('URL_FRONT_END_AUTORIZADO_1')
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
